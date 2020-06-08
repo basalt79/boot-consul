@@ -1,10 +1,11 @@
-package com.basalt.boot;
+package com.basalt.upper;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.env.Environment;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.net.InetAddress;
@@ -12,25 +13,26 @@ import java.net.UnknownHostException;
 import java.util.Objects;
 
 @RestController
-public class EchoController {
+public class UpperController {
 
-  private Logger logger = LoggerFactory.getLogger(EchoController.class);
+  private Logger logger = LoggerFactory.getLogger(UpperController.class);
 
   @Autowired
   Environment environment;
 
-  @RequestMapping("echo")
-  public Echo echo() throws UnknownHostException {
-    var content = environment.getProperty("echo.value");
+  @RequestMapping("upper")
+  public Upper upper(@RequestParam("value") String value) throws UnknownHostException {
+    // TODO handle style
+    var style = Style.valueOf(environment.getProperty("upper.style"));
     var port = Integer.parseInt(Objects.requireNonNull(environment.getProperty("local.server.port")));
     var host = InetAddress.getLocalHost().getHostAddress();
-    Echo echo = new Echo()
+    Upper upper = new Upper()
       .setHost(host)
       .setPort(port)
-      .setContent(content);
+      .setContent(value.toUpperCase());
 
-    logger.info("echo called, will return " + echo.toString());
-    return echo;
+    logger.info("upper called, will return " + upper.toString());
+    return upper;
   }
 
 }

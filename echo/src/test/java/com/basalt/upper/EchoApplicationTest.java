@@ -1,4 +1,4 @@
-package com.basalt.boot;
+package com.basalt.upper;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
