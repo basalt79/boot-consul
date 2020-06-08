@@ -1,5 +1,15 @@
 server:
-  port: 0
+  port: 8080
+
+feign:
+  client:
+    config:
+      default:
+        connectTimeout: 5000
+        readTimeout: 5000
+        loggerLevel: full
+        decode404: true
+        errorDecoder: com.basalt.echo.upper.FeignErrorDecoder
 
 echo:
   value: value from application.yml

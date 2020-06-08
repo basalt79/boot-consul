@@ -73,7 +73,7 @@ curl \
     --request PUT \
     --data 'echo:
   value: value from consul' \
-    http://127.0.0.1:8500/v1/kv/config/boot-consul/data
+    http://127.0.0.1:8500/v1/kv/config/echo/data
 ```
 
 here we add some new Key-Value content to __"config/boot-consul/data"__

@@ -1,9 +1,8 @@
-package com.basalt.echo;
+package com.basalt.echo.upper;
 
-public class Echo {
+public class UpperResponse {
 
   private String content;
-  private String upperContent;
   private String host;
   private int port;
 
@@ -11,17 +10,8 @@ public class Echo {
     return content;
   }
 
-  public Echo setContent(String content) {
+  public UpperResponse setContent(String content) {
     this.content = content;
-    return this;
-  }
-
-  public String getUpperContent() {
-    return upperContent;
-  }
-
-  public Echo setUpperContent(String upperContent) {
-    this.upperContent = upperContent;
     return this;
   }
 
@@ -33,23 +23,23 @@ public class Echo {
     return host;
   }
 
-  public Echo setHost(String host) {
+  public UpperResponse setHost(String host) {
     this.host = host;
     return this;
   }
 
-  public Echo setPort(int port) {
+  public UpperResponse setPort(int port) {
     this.port = port;
     return this;
   }
 
   @Override
   public String toString() {
-    return "Echo{" +
+    return "UpperResponse{" +
       "content='" + content + '\'' +
-      ", upperContent='" + upperContent + '\'' +
       ", host='" + host + '\'' +
       ", port=" + port +
       '}';
   }
+
 }
