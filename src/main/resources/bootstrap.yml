@@ -1,0 +1,19 @@
+spring:
+  application:
+    name: boot-consul
+
+  cloud:
+    consul:
+      port: 8500
+      host: localhost
+      discovery:
+        instanceId: ${spring.application.name}:${vcap.application.instance_id:${spring.application.instance_id:${random.value}}}
+        fail-fast: false
+        tags:
+          - "consulTagValue"
+      config:
+        format: YAML
+        data-key: data
+        fail-fast: false
+        watch:
+          delay: 10000
