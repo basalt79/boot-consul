@@ -1,5 +1,2 @@
 server:
   port: 0
-
-upper:
-  style: ALL

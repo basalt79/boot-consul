@@ -22,16 +22,17 @@ public class UpperController {
 
   @RequestMapping("upper")
   public Upper upper(@RequestParam("value") String value) throws UnknownHostException {
-    // TODO handle style
-    var style = Style.valueOf(environment.getProperty("upper.style"));
     var port = Integer.parseInt(Objects.requireNonNull(environment.getProperty("local.server.port")));
     var host = InetAddress.getLocalHost().getHostAddress();
     Upper upper = new Upper()
       .setHost(host)
       .setPort(port)
       .setContent(value.toUpperCase());
-
     logger.info("upper called, will return " + upper.toString());
+
+    String nullString = null;
+//    System.out.println(nullString.toString());
+
     return upper;
   }
 

@@ -1,7 +1,9 @@
 server:
-  port: 8080
+  port: 0
 
 feign:
+  hystrix:
+    enabled: true
   client:
     config:
       default:
@@ -10,6 +12,20 @@ feign:
         loggerLevel: full
         decode404: true
         errorDecoder: com.basalt.echo.upper.FeignErrorDecoder
+
+management:
+  endpoint:
+    metrics:
+      enabled: true
+    prometheus:
+      enabled: true
+  endpoints:
+    web:
+      exposure:
+        include: health, info, prometheus
+    export:
+      prometheus:
+        enabled: true
 
 echo:
   value: value from application.yml
