@@ -4,6 +4,7 @@ public class Echo {
 
   private String content;
   private String upperContent;
+  private String configValue;
   private String host;
   private int port;
 
@@ -22,6 +23,15 @@ public class Echo {
 
   public Echo setUpperContent(String upperContent) {
     this.upperContent = upperContent;
+    return this;
+  }
+
+  public String getConfigValue() {
+    return configValue;
+  }
+
+  public Echo setConfigValue(String configValue) {
+    this.configValue = configValue;
     return this;
   }
 
@@ -48,6 +58,7 @@ public class Echo {
     return "Echo{" +
       "content='" + content + '\'' +
       ", upperContent='" + upperContent + '\'' +
+      ", configValue='" + configValue + '\'' +
       ", host='" + host + '\'' +
       ", port=" + port +
       '}';
