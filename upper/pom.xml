@@ -10,7 +10,7 @@
   <name>Upper Microservice</name>
 
   <properties>
-    <spring-boot.version>2.3.4.RELEASE</spring-boot.version>
+    <spring-boot.version>2.5.12</spring-boot.version>
     <spring-cloud.version>2.2.5.RELEASE</spring-cloud.version>
     <spring-cloud-consul.version>2.2.4.RELEASE</spring-cloud-consul.version>
     <maven.compiler.parameters>true</maven.compiler.parameters>
